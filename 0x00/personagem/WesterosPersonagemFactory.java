@@ -2,39 +2,16 @@ public class WesterosPersonagemFactory extends PersonagemFactory {
 
     @Override
     public Personagem createPersonagem(TipoPersonagem tipo, String nome) {
-
-        int inteligencia = 0;
-        int forca = 0;
-        int vigor = 0;
-        int resistencia = 0;
-        int destreza = 0;
-
         if (tipo == TipoPersonagem.MAGO) {
-
-            inteligencia = 8;
-            forca = 3;
-            vigor = 3;
-            resistencia = 3;
-            destreza = 4;
+            return new Mago(nome, 8, 3, 3, 3, 4);
         } else if (tipo == TipoPersonagem.LADRAO) {
-
-            inteligencia = 1;
-            forca = 8;
-            vigor = 7;
-            resistencia = 7;
-            destreza = 10;
-
+            return new Ladrao(nome, 1, 8, 7, 7, 10);
         } else if (tipo == TipoPersonagem.GUERREIRO) {
+            return new Guerreiro(nome, 0, 9, 7, 10, 7);
 
-            inteligencia = 0;
-            forca = 9;
-            vigor = 7;
-            resistencia = 10;
-            destreza = 7;
         }
-        Personagem personagem = new Personagem(nome, tipo, inteligencia, forca, vigor, resistencia, destreza);
-        return personagem;
-    }
 
+        return null;
+    }
 }
 

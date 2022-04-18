@@ -1,34 +1,14 @@
 public class TerraMediaPersonagemFactory extends PersonagemFactory {
 
     @Override
-    public Personagem createPersonagem(TipoPersonagem tipo, String nome) {
-        int inteligencia = 0;
-        int forca = 0;
-        int vigor = 0;
-        int resistencia = 0;
-        int destreza = 0;
-
+    public Personagem createPersonagem(TipoPersonagem tipo, String nome){
         if (tipo == TipoPersonagem.MAGO) {
-            inteligencia = 10;
-            forca = 2;
-            vigor = 5;
-            resistencia = 3;
-            destreza = 4;
+            return new Mago(nome, 10, 2, 5, 3, 4);
         } else if (tipo == TipoPersonagem.LADRAO) {
-            inteligencia = 2;
-            forca = 6;
-            vigor = 8;
-            resistencia = 5;
-            destreza = 10;
+            return new Ladrao(nome, 2, 6, 8, 5, 10);
         } else if (tipo == TipoPersonagem.GUERREIRO) {
-            inteligencia = 1;
-            forca = 8;
-            vigor = 5;
-            resistencia = 10;
-            destreza = 6;
+            return new Guerreiro(nome, 1, 8, 5, 10, 6);
         }
-        Personagem personagem = new Personagem(nome, tipo, inteligencia, forca, vigor, resistencia, destreza);
-        return personagem;
-
+        return null;
     }
 }

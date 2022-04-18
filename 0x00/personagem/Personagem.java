@@ -1,4 +1,4 @@
-public  class Personagem {
+public abstract class Personagem {
     private String nome;
     private TipoPersonagem tipo;
     private int inteligencia;
@@ -20,25 +20,7 @@ public  class Personagem {
         this.destreza = destreza;
     }
 
-    private double danoAtaque;
-    public Personagem(double DanoAtaque){
-        this.danoAtaque = danoAtaque;
-    }
-
-    public double getDanoAtaque() {
-        switch (this.tipo){
-            case MAGO:
-                danoAtaque = (getInteligencia () * 0.8) + (getForca() * 0.05) + (getDestreza() * 0.05) + (getVigor() * 0.1);
-                break;
-            case LADRAO:
-                danoAtaque = (getForca() * 0.5) +  (getDestreza() * 0.35) + (getVigor() * 0.1) + (getInteligencia() * 0.05);
-                break;
-            case GUERREIRO:
-                danoAtaque = (getForca() * 0.8) + (getVigor() * 0.05) + (getDestreza() * 0.1) + (getInteligencia() * 0.05);
-                break;
-        }
-        return danoAtaque;
-    }
+    public abstract double getDanoAtaque();
 
     public String getNome() {
         return nome;
@@ -94,10 +76,6 @@ public  class Personagem {
 
     public void setDestreza(int destreza) {
         this.destreza = destreza;
-    }
-
-    public void setDanoAtaque(double danoAtaque) {
-        this.danoAtaque = danoAtaque;
     }
 
     @Override

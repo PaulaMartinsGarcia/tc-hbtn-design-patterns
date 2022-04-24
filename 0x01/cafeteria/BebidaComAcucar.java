@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class BebidaComAcucar extends BebidaDecorator{
 
     public BebidaComAcucar(Bebida bebidaDecorada) {
@@ -5,8 +7,10 @@ public class BebidaComAcucar extends BebidaDecorator{
     }
 
     @Override
-    public String obterIngredientes() {
-        return super.obterIngredientes() + ", acucar";
+    public List<String> obterIngredientes() {
+        List<String> cafe = super.obterIngredientes();
+        cafe.add("acucar");
+        return cafe;
     }
 
     @Override

@@ -1,7 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class BebidaCafe extends Bebida{
     @Override
-    public String obterIngredientes() {
-        return "cafe";
+    public List<String> obterIngredientes() {
+        List<String> cafe = new ArrayList<>();
+        cafe.add("cafe");
+        return cafe;
     }
 
     @Override

@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class BebidaDecorator extends Bebida{
 
     private Bebida bebidaDecorada;
@@ -7,7 +9,7 @@ public class BebidaDecorator extends Bebida{
     }
 
     @Override
-    public String obterIngredientes() {
+    public List<String> obterIngredientes() {
         return bebidaDecorada.obterIngredientes();
     }
 

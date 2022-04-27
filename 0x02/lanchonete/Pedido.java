@@ -26,12 +26,12 @@ public class Pedido {
 
         String fora = "\tFora da caixa:\n";
         for (ItemPedido itemPedido : itensForaCaixa){
-            fora += String.format("\t\t- %s %s \n", itemPedido.getTipo(), itemPedido.getNome());
+            fora += String.format("\t\t- %s %s\n", itemPedido.getTipo(), itemPedido.getNome());
         }
 
         String dentro = "\tDentro da caixa:\n";
         for (ItemPedido itemPedido : itensDentroCaixa){
-            dentro += String.format("\t\t- %s %s \n", itemPedido.getTipo(), itemPedido.getNome());
+            dentro += String.format("\t\t- %s %s\n", itemPedido.getTipo(), itemPedido.getNome());
         }
         return fora + dentro;
     }
